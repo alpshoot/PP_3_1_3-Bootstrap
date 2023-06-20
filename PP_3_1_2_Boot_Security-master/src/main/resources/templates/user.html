@@ -14,7 +14,8 @@
     <div class="navbar-brand inline">
         <b th:text="${user.getEmail()}"></b>
         with roles:
-        <b class="font-weight-normal" th:text="${user.getRoles()}"></b>
+            <b th:each="role : ${user.getRoles()}" th:utext="${role.getName()}"
+                style="list-style-type: none"></b>
     </div>
     <div>
         <a href="/logout" class="text-secondary">Logout</a>
@@ -55,8 +56,6 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Age</th>
-                                            <th>City</th>
                                             <th>Email</th>
                                             <th>Role</th>
                                         </tr>
@@ -64,10 +63,13 @@
                                         <tr>
                                             <td th:text="${user.getId()}"></td>
                                             <td th:text="${user.getName()}"></td>
-                                            <td th:text="${user.getAge()}"></td>
-                                            <td th:text="${user.getCity()}"></td>
                                             <td th:text="${user.getEmail()}"></td>
-                                            <td th:text="${user.getRoles()}"></td>
+                                            <td>
+                                                <ul>
+                                                    <li th:each="role : ${user.getRoles()}" th:utext="${role.getName()}"
+                                                        style="list-style-type: none"></li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                     </table>
                                 </div>

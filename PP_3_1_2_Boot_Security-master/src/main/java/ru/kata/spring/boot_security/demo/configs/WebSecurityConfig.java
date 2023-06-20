@@ -38,15 +38,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
 
-//                .antMatchers("/", "/index").permitAll()
+                .antMatchers("/", "/index").permitAll()
 //                .antMatchers("/admin").hasAnyRole("ADMIN")
-                .antMatchers("/admin/**").hasRole("ADMIN")
+//                .antMatchers("/admin/**").hasAnyRole("ADMIN")
 //                .antMatchers("/user").hasAnyRole("USER","ADMIN")
-                .antMatchers("/user/**").hasAnyRole("USER","ADMIN")
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-//                .antMatchers("/user").hasRole("USER")
-//                .anyRequest().authenticated()
+//                .antMatchers("/user/**").hasAnyRole("USER")
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/user").hasRole("USER")
+                .anyRequest().authenticated()
                 .and()
                 .formLogin().successHandler(successUserHandler)
                 .permitAll()
@@ -54,6 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();
     }
+
 
     @Bean
     public PasswordEncoder passwordEncoder() {

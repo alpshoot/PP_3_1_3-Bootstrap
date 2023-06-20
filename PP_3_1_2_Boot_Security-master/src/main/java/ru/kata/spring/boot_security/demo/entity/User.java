@@ -19,12 +19,6 @@ public class User implements UserDetails {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "age")
-    private int age;
-
-    @Column(name = "city")
-    private String city;
-
     @Column(name = "email", unique = true)
     private String email;
 
@@ -38,10 +32,8 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String name, int age, String city, String email, String password, Collection<Role> roles) {
+    public User(String name, String email, String password, Collection<Role> roles) {
         this.name = name;
-        this.age = age;
-        this.city = city;
         this.email = email;
         this.password = password;
         this.roles = roles;
@@ -117,29 +109,11 @@ public class User implements UserDetails {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", city='" + city + '\'' +
                 ", email='" + email + '\'' +
                 ", roles=" + roles +
                 '}';
