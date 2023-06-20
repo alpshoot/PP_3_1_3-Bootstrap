@@ -116,8 +116,7 @@
                                                                        class="col-form-label">name</label>
                                                                 <input type="text"
                                                                        th:value="${user.getName}" name="name"
-                                                                       class="form-control" id="nameUpdate"
-                                                                       required minlength="2" maxlength="20"/>
+                                                                       class="form-control" id="nameUpdate"/>
                                                             </div>
 <!--                                                            <div class="mb-3">-->
 <!--                                                                <label for="ageUpdate"-->
@@ -145,8 +144,7 @@
                                                                        class="col-form-label">password</label>
                                                                 <input type="password"
                                                                        name="password"
-                                                                       class="form-control" id="passwordUpdate"
-                                                                       required minlength="2" maxlength="20"/>
+                                                                       class="form-control" id="passwordUpdate"/>
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label class="container-fluid "
@@ -155,7 +153,7 @@
                                                                         th:value="${user.roles}" name="roles" required="required"
                                                                         multiple="multiple" size="2">
                                                                     <option value="1">USER</option>
-                                                                    <option selected="selected" value="2">ADMIN</option>
+                                                                    <option value="2">ADMIN</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -287,10 +285,13 @@
                                 <select class="form-control form-control-sm" name="roles" multiple
                                         th:value="${user.getRoles}" style="height: 50px; width: 300px; margin: 0 auto">
                                     <option value="1">USER</option>
-                                    <option selected= "selected" value="2">ADMIN</option>
+                                    <option value="2">ADMIN</option>
                                 </select>
                                 <br/>
                                 <div>
+                                    <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close
+                                    </button>
                                     <button type="submit" class="btn btn-success">Add new user</button>
                                 </div>
                             </form>
