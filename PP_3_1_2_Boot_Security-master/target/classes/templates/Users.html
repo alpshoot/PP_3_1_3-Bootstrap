@@ -40,13 +40,16 @@
         <div class="container-fluid">
             <div class="h1 mt-3">Admin panel</div>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab"
-                            data-bs-toggle="tab" data-bs-target="#home"
-                            type="button" role="tab"
-                            aria-controls="home" aria-selected="true">Users table
-                    </button>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#home">User table</a>
                 </li>
+<!--                <li class="nav-item" role="presentation">-->
+<!--                    <button class="nav-link active" id="home-tab"-->
+<!--                            data-bs-toggle="tab" data-bs-target="#home"-->
+<!--                            type="button" role="tab"-->
+<!--                            aria-controls="home" aria-selected="true">Users table-->
+<!--                    </button>-->
+<!--                </li>-->
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="new-user-tab"
                             data-bs-toggle="tab" data-bs-target="#newUser"
@@ -290,7 +293,6 @@
                                 <br/>
                                 <div>
                                     <button type="submit" class="btn btn-success">Add new user</button>
-                                    <button type="button" class="btn btn-secondary">Close</button>
                                 </div>
                             </form>
                         </div>
